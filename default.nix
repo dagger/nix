@@ -13,4 +13,6 @@
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
+
+  dagger = pkgs.callPackage ./pkgs/dagger { };
 }
