@@ -52,6 +52,8 @@ pkgs.stdenv.mkDerivation {
     homepage = "https://dagger.io";
     license = lib.licenses.asl20;
 
+    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+
     platforms = [
       "x86_64-linux"
       "aarch64-linux"
