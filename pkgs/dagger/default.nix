@@ -9,24 +9,24 @@ system ? builtins.currentSystem
 }:
 let
   shaMap = {
-    x86_64-linux = "1zp0wm7lk0gijrlmb8p8g9al9q451lsaya17bp3wc2k73mp69q65";
-    armv7l-linux = "043q5xihqynjwm3jq2qngawb2farpilgv1cngbrhk95dh8r5k0j0";
-    aarch64-linux = "12l3g90j4qp2fkrwk9n4090bkl1csqk5ljlxwpr35v1f2zxmzyil";
-    x86_64-darwin = "1z8knnrcv7s70bkk2vpqa9qb59xiaywkml7dwmbckp5b8cspm5y2";
-    aarch64-darwin = "0l5rsi9n0iv31mr3ac4rs96w4gidl00y8717hijgdhbdwngf2hpc";
+    x86_64-linux = "08a79mvvy1igq2ky5q82481ycj6yya0mi9sk644a1v3rin32vjyz";
+    armv7l-linux = "1fi2k5h1qvi8r9bgzcqnmcx146iy0kg5wbidy32lw8jvr5zr2m9y";
+    aarch64-linux = "01nzvjzizjzwqrc9n8f5sll2yx6kj7azb43vwlk4gfzplrchy6mq";
+    x86_64-darwin = "1pnqaml947gmvzhyqja659f3l64z2fykzifqh0dfa84cx1kxpv4n";
+    aarch64-darwin = "17cl0rg6sanfsaiz1niawb9r65w33asrhal0w00imxnrz5mmb6bv";
   };
 
   urlMap = {
-    x86_64-linux = "https://dl.dagger.io/dagger/releases/0.16.0-llm.2/dagger_v0.16.0-llm.2_linux_amd64.tar.gz";
-    armv7l-linux = "https://dl.dagger.io/dagger/releases/0.16.0-llm.2/dagger_v0.16.0-llm.2_linux_armv7.tar.gz";
-    aarch64-linux = "https://dl.dagger.io/dagger/releases/0.16.0-llm.2/dagger_v0.16.0-llm.2_linux_arm64.tar.gz";
-    x86_64-darwin = "https://dl.dagger.io/dagger/releases/0.16.0-llm.2/dagger_v0.16.0-llm.2_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://dl.dagger.io/dagger/releases/0.16.0-llm.2/dagger_v0.16.0-llm.2_darwin_arm64.tar.gz";
+    x86_64-linux = "https://dl.dagger.io/dagger/releases/0.15.4/dagger_v0.15.4_linux_amd64.tar.gz";
+    armv7l-linux = "https://dl.dagger.io/dagger/releases/0.15.4/dagger_v0.15.4_linux_armv7.tar.gz";
+    aarch64-linux = "https://dl.dagger.io/dagger/releases/0.15.4/dagger_v0.15.4_linux_arm64.tar.gz";
+    x86_64-darwin = "https://dl.dagger.io/dagger/releases/0.15.4/dagger_v0.15.4_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://dl.dagger.io/dagger/releases/0.15.4/dagger_v0.15.4_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "dagger";
-  version = "0.16.0-llm.2";
+  version = "0.15.4";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
