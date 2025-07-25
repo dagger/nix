@@ -5,7 +5,7 @@ set -euxo pipefail
 version=$1
 
 function get_hash() {
-	nix hash to-sri --type sha256 $(nix-prefetch-url https://github.com/dagger/container-use/releases/download/v${version}/container-use_v${version}_${1}.tar.gz)
+	nix hash convert --hash-algo sha256 $(nix-prefetch-url https://github.com/dagger/container-use/releases/download/v${version}/container-use_v${version}_${1}.tar.gz)
 }
 
 cat <<EOF

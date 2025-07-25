@@ -2,7 +2,7 @@
 
 let
   pname = "container-use";
-  version = "0.0.0"; # Will be updated by GoReleaser
+  version = "0.3.1";
 
   inherit (stdenv.hostPlatform) system;
 
@@ -34,7 +34,7 @@ stdenv.mkDerivation {
     runHook preInstall
 
     install -Dm755 container-use $out/bin/container-use
-    
+
     # Create cu symlink for backward compatibility
     ln -s $out/bin/container-use $out/bin/cu
 
@@ -43,7 +43,7 @@ stdenv.mkDerivation {
       --bash completions/container-use.bash \
       --fish completions/container-use.fish \
       --zsh completions/container-use.zsh
-    
+
     # Install cu completions for backward compatibility
     installShellCompletion --cmd cu \
       --bash completions/cu.bash \
