@@ -1,4 +1,4 @@
-{ pkgs, stdenv }:
+{ installShellFiles, pkgs, stdenv }:
 
 let
   pname = "container-use";
@@ -29,6 +29,8 @@ stdenv.mkDerivation {
   };
 
   sourceRoot = ".";
+
+  nativeBuildInputs = [ installShellFiles ];
 
   installPhase = ''
     runHook preInstall
