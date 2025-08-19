@@ -9,24 +9,24 @@ system ? builtins.currentSystem
 }:
 let
   shaMap = {
-    x86_64-linux = "0gwb9ld92762rm83gajzh8jpc6d4iysxzn0h1x38qzvlklpfw5ar";
-    armv7l-linux = "0k9a66cf74p9g5c4zha08lkvh8xdd6ydn6pc0fhrvnnn60lc3abj";
-    aarch64-linux = "0c6n0x36317nys9yd5kj295fgx8fv0khvsk2g1fprd49f4gw036x";
-    x86_64-darwin = "0mr7kmcz5np3vdg1rzpj6m3fsjsmycx3yypgz65jh2kz4xh4ngnh";
-    aarch64-darwin = "03s40iwasv94ppi256324z0qhzv78nljvrkvfxw1lc5dsjwdgvr3";
+    x86_64-linux = "1i7dlmiqysg1yq2ymdmjdfs0d4xwrdw83fnphs8z44cvp6r00gkc";
+    armv7l-linux = "0z5z6j5i3yq7vrbk7c3dnd24rngm4xmjsqrcg2ww4dc4csya2x1b";
+    aarch64-linux = "0w9576cbyidrzwcq227xl2mmph98dhrzh0dql4755szm5r0z51kn";
+    x86_64-darwin = "08rcgsf5m4hzr2yaf8b5yr2wq4za4b2r4nb8nl8aig4d4s8wmshz";
+    aarch64-darwin = "0pqjwdkcrzqrwr2m1rq22qfrjrd7f09dj9h54awil60m735s2d6g";
   };
 
   urlMap = {
-    x86_64-linux = "https://dl.dagger.io/dagger/releases/0.18.15/dagger_v0.18.15_linux_amd64.tar.gz";
-    armv7l-linux = "https://dl.dagger.io/dagger/releases/0.18.15/dagger_v0.18.15_linux_armv7.tar.gz";
-    aarch64-linux = "https://dl.dagger.io/dagger/releases/0.18.15/dagger_v0.18.15_linux_arm64.tar.gz";
-    x86_64-darwin = "https://dl.dagger.io/dagger/releases/0.18.15/dagger_v0.18.15_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://dl.dagger.io/dagger/releases/0.18.15/dagger_v0.18.15_darwin_arm64.tar.gz";
+    x86_64-linux = "https://dl.dagger.io/dagger/releases/0.18.16/dagger_v0.18.16_linux_amd64.tar.gz";
+    armv7l-linux = "https://dl.dagger.io/dagger/releases/0.18.16/dagger_v0.18.16_linux_armv7.tar.gz";
+    aarch64-linux = "https://dl.dagger.io/dagger/releases/0.18.16/dagger_v0.18.16_linux_arm64.tar.gz";
+    x86_64-darwin = "https://dl.dagger.io/dagger/releases/0.18.16/dagger_v0.18.16_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://dl.dagger.io/dagger/releases/0.18.16/dagger_v0.18.16_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "dagger";
-  version = "0.18.15";
+  version = "0.18.16";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
