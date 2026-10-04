@@ -40,3 +40,12 @@ channel](https://discord.com/channels/707636530424053791/1122966469425233940) ðŸ
       });
 }
 ```
+
+### Kernel module
+
+The Dagger Engine requires the `iptable_nat` Linux kernel module in order to function properly.
+You can add it in your `configuration.nix`
+
+```nix
+boot.kernelModules = [ "iptable_nat" ];
+```
